@@ -78,7 +78,17 @@ function accessCallback(response){
 			columns : spotify_cols
 		};
 
-		
+		var test_cols = [
+			{ id: "test", alias: "Test", dataType : tableau.dataTypeEnum.string}
+		];
+
+		var test_tableInfo = {
+			id: "TEST",
+			alias: "test table",
+			columns: test_cols
+		}
+
+		schemaCallback([spotify_tableInfo, test_tableInfo]);
 	};
 	
 	// retrieve the table data - this function loops through playlistData
