@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nike Org</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- primary style sheet -->
+  <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+
+<body>
+
+  <div class="h1">
+    <img src="swoosh.jpeg"  />
+    <h1>NIKE ORG CHART</h1>    
+ 
+  </div>
+  <div class="main">
+
+  
+    <form class="roleForm" action="" method="get">
+      <label for="role1">Enter a </label>
+      <input class="inputText1"  name="rolename1" value="JOB TITLE" >
+      <label for="role2"> or a </label>
+      <input class="inputText2"  name="rolename2" value="PERSONS NAME" > 
+      <label for="role3"> <p style="color:#800080";></p></label>
+      <label for="button">  </label>&nbsp;&nbsp;
+      <input class="btn btn-outline-secondary btn-sm" type="button" name="button" value="Update" onClick="formChanged()">
+      &emsp;&emsp;&emsp;Click individual nodes to expand/collapse  &nbsp;&nbsp;&nbsp;&nbsp; <small><i>Last Updated: 5/10/21.</i> </small>
+    </form>
+
+    <div class="org"></div>
+
+  </div>
+  <!-- load the d3.js library -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+
+  <!-- load the javascript to render the org chart -->
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
