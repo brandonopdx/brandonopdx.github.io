@@ -1,4 +1,3 @@
-<!-- this is the index file for the random data -->
 <html>
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -62,7 +61,7 @@
      
       //thickness of the lines
       var lineOpacity = .7
-      var lineStroke = "2.5px"
+      var lineStroke = "3px"
 
       var axisPad = 10 // axis formatting
       var R = 6 //legend marker
@@ -160,8 +159,11 @@
             .attr('class', 'gLegend')
             .attr("transform", "translate(" + (width + 20) + "," + 0 + ")")
 
+
+            var legendorder = ["Sunday","Thursday", "Wednesday","Tuesday", "Monday"  ]
+
         var legend = svgLegend.selectAll('.legend')
-          .data(category)
+          .data(legendorder)
           .enter().append('g')
             .attr("class", "legend")
             .attr("transform", function (d, i) {return "translate(0," + i * 20 + ")"})
@@ -263,7 +265,7 @@
           tooltip = d3.select("#chart").append("div")
             .attr('id', 'tooltip')
             .style('position', 'absolute')
-            .style("background-color", "#fbfbfb")
+            .style("background-color", "#D3D3D3")
             .style('padding', 6)
             .style('display', 'none')
 
