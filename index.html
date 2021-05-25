@@ -70,7 +70,7 @@
       // colors are in order of the days declared above. find some better colors
       var color = d3.scaleOrdinal()
         .domain(category)
-        .range(['#1F77B4', '#FF7F0E', '#2CA02C', '#D62728', '#9467BD'])
+        .range(['#1F77B4', '#FF7F0E', '#2CA02C', '#8C564B', '#9467BD'])
 
       d3.csv("cross_data_random.csv", data => {
 
@@ -168,17 +168,18 @@
             .attr("class", "legend")
             .attr("transform", function (d, i) {return "translate(0," + i * 20 + ")"})
 
-        legend.append("circle")
+        legend.append("rect")
             .attr("class", "legend-node")
-            .attr("cx", 0)
-            .attr("cy", 0)
+            .attr("height", 12)
+            .attr("width", 12)
             .attr("r", R)
             .style("fill", d=>color(d))
 
         legend.append("text")
             .attr("class", "legend-text")
-            .attr("x", R*2)
-            .attr("y", R/2)
+            .attr("x", R+10)
+            .attr("y", R+5
+            )
             .style("fill", "#696969")
             .style("font-size", 14)
             .text(d=>d)
@@ -265,7 +266,7 @@
           tooltip = d3.select("#chart").append("div")
             .attr('id', 'tooltip')
             .style('position', 'absolute')
-            .style("background-color", "#D3D3D3")
+            .style("background-color", "#f6f6f6")
             .style('padding', 6)
             .style('display', 'none')
 
