@@ -1,6 +1,6 @@
 (function() {
   var margin = { top: 0, left: 0, right: 0, bottom: 0},
-      height =600,
+      height =1000,
       width = 1000 ;
   
   var svg = d3.select("#chart ")
