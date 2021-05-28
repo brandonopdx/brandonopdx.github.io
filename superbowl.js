@@ -3,7 +3,7 @@
       height =600,
       width = 1000 ;
   
-  var svg = d3.select("#chart")
+  var svg = d3.select("#chart ")
       .append("svg")
       .attr("height", height )
       .attr("width", width )
@@ -19,8 +19,7 @@ var defs = svg.append("defs");
 //how to scale the size of the circles, is dependent on the size of the data
   var radiusScale = d3.scaleSqrt()
     .domain([0, 1])
-    .range([0, 25])
-
+    .range([0, 40])
 
   var simulation = d3.forceSimulation()
     .force("x", d3.forceX(width / 2).strength(0.1))
