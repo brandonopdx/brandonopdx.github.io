@@ -1,24 +1,110 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Bubble chart</title>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
 
     <style>
-    
+       h1,h2,h3,h4,h5,h6 {
+  font-family: 'Futura', sans-serif;
+  font-weight: normal;
+}
+
+
+h1 {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: 0.83rem;
+}
+
+.main {
+  margin: 2% 10% 7% 0%;
+  padding: 0% 2% 10px 0%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #e5e5e5;
+}
+
+
+/* Format the inputs/html form */
+.roleForm {
+  font-family: 'Spectral', sans-serif;
+  font-weight: normal;
+  font-size: 0.83rem;
+}
+
+.button {
+  font-family: 'Spectral', sans-serif;
+  font-weight: normal;
+  font-size: 0.6rem;
+}
+
+.inputText {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Format the org chart */
+.org {
+  margin-top: 30px;
+}
+
+.node circle {
+  fill: #fff;
+}
+
+.node text {
+  font: 11.5px sans-serif;
+  font-family: 'Spectral', sans-serif;
+  letter-spacing: -1px;
+}
+
+.link {
+  fill: none;
+  stroke: #e5e5e5;
+  stroke-width: 2px;
+}
+
+.tooltip {
+  background: #D4D4D4;
+  border: 0;
+  border-radius: 4px;
+  font-family: 'Spectral', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: -1px;
+  padding: 3px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.tooltipCircle {
+  text-align: center;
+  width: 250px;
+}
+
     </style>
   </head>
 </head>
 <body>
   <div class="container">
-    <h1>Superbowl Wins </h1>
+    <h1>Superbowl Wins All Time
 
 
-
+<small>
+  <button id="no-conferences">All teams together</button>
     <button id="conference">Split into conferences</button>
-    <button id="no-conferences">Put everyone together</button>
-    
+   
+  </small></h1>
     <div id="chart">
           <svg height="0" width="0"  >    
            <defs>
@@ -101,6 +187,11 @@
                   <image height = "1" width = "1" preserveAspectRatio="none"  
                   xmlms.xlink = "http://www.w3.org/1999/xlink" xlink:href="images/redskins.png"></image>
                 </pattern>
+                <pattern id="buccaneers"  height="100%" width ="100%" patternContentUnits="objectBoundingBox">
+                  <image height = "1" width = "1" preserveAspectRatio="none"  
+                  xmlms.xlink = "http://www.w3.org/1999/xlink" xlink:href="images/buccaneers.png"></image>
+                </pattern>
+                
           </defs>
 
         </svg> 

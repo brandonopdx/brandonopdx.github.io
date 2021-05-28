@@ -1,9 +1,9 @@
 (function() {
   var margin = { top: 0, left: 0, right: 0, bottom: 0},
-      height = 1000 ,
+      height =600,
       width = 1000 ;
   
-  var svg = d3.select("#chart ")
+  var svg = d3.select("#chart")
       .append("svg")
       .attr("height", height )
       .attr("width", width )
@@ -19,14 +19,14 @@ var defs = svg.append("defs");
 //how to scale the size of the circles, is dependent on the size of the data
   var radiusScale = d3.scaleSqrt()
     .domain([0, 1])
-    .range([0, 40])
+    .range([0, 25])
 
 
   var simulation = d3.forceSimulation()
-    .force("x", d3.forceX(width / 2).strength(0.05))
-    .force("y", d3.forceY(height / 2).strength(0.05))
+    .force("x", d3.forceX(width / 2).strength(0.1))
+    .force("y", d3.forceY(height / 2).strength(0.1))
     .force("collide", d3.forceCollide(function(d) {
-      return radiusScale(d.wins) + 1
+      return radiusScale(d.wins) + 2
     }))
 
   d3.queue()
@@ -62,9 +62,7 @@ var defs = svg.append("defs");
       .attr('r', function(d) {
         return radiusScale(d.wins)
       })
-      
-     
-     //.attr("fill","url(#bears)")
+
 
      //this fill is supposed to work but turns the images black (if the name doesn't match) or white (name matches)
       .attr('fill', function(d) {
@@ -75,7 +73,9 @@ var defs = svg.append("defs");
         console.log(d)
       });
      
-      
+     
+   
+    
 
 
     
@@ -118,4 +118,9 @@ var defs = svg.append("defs");
 
   }
 
+
+
 })();
+
+
+
