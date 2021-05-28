@@ -1,0 +1,21 @@
+id,team,wins,conference,image_path
+Pittsburgh Steelers,steelers,6,AFC,images/steelers.png
+New England Patriots,patriots,6,AFC,images/patriots.png
+San Francisco 49ers,49ers,5,NFC,images/49ers.png
+Dallas Cowboys,cowboys,5,NFC,images/cowboys.png
+Green Bay Packers,packers,4,NFC,images/packers.png
+New York Giants,giants,4,NFC,images/giants.png
+Las Vegas Raiders,raiders,3,AFC,images/raiders.png
+Washington Football Team,redskins,3,NFC,images/redskins.png
+Denver Broncos,broncos,3,AFC,images/broncos.png
+Baltimore Ravens,ravens,2,AFC,images/ravens.png
+Tampa Bay Buccaneers,buccaneers,2,NFC,images/buccaneers.png
+Indianapolis Colts,colts,2,AFC,images/colts.png
+Kansas City Chiefs,chiefs,2,NFC,images/chiefs.png
+Miami Dolphins,dolphins,2,AFC,images/dolphins.png
+New Orleans Saints,saints,1,NFC,images/saints.png
+New York Jets,jets,1,AFC,images/jets.png
+bears,bears,1,NFC,images/bears.png
+Philadelphia Eagles,eagles,1,NFC,images/eagles.png
+Seattle Seahawks,seahawks,1,NFC,images/seahawks.png
+Los Angeles Rams,rams,1,NFC,images/rams.png
