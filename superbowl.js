@@ -3,16 +3,17 @@
       height =1000,
       width = 1000 ;
   
-  var svg = d3.select("#chart ")
+      var svg = d3.select("#chart")
       .append("svg")
       .attr("height", height )
       .attr("width", width )
       .append("g")
       .attr("transform", "translate(0,0)")
+      
 
 //the good stuff. . .adding the images
 
-var defs = svg.append("defs");
+var defs = svg.append("pattern");
 
 
 
@@ -21,12 +22,19 @@ var defs = svg.append("defs");
     .domain([0, 1])
     .range([0, 40])
 
+  var forceX = d3.forceX(function(d) {
+     return width/2
+   }).strength(0.1)
+
+   var forceCollide = d3.forceCollide(function(d) {
+     return radiusScale(d.wins) +2
+   })
+
+
   var simulation = d3.forceSimulation()
-    .force("x", d3.forceX(width / 2).strength(0.1))
+    .force("x", forceX)
     .force("y", d3.forceY(height / 2).strength(0.1))
-    .force("collide", d3.forceCollide(function(d) {
-      return radiusScale(d.wins) + 2
-    }))
+    .force("collide", forceCollide)
 
   d3.queue()
     .defer(d3.csv, "superbowl.csv")
@@ -34,55 +42,69 @@ var defs = svg.append("defs");
 
   function ready (error, datapoints) {
 
-    defs.selectAll("pattern")
-         .data(datapoints)
-          .enter().append("pattern")
-         .attr("class", "pattern")
-         .attr("id", function(d) {
-           return d.team
-         })
-          .attr("height","100%")
-          .attr("width","100%")
-          .attr("PatternContentUnits","ObjectBoundingBox")
-          .append("image")
-          .attr("height",1)
-          .attr("width",1) 
-          .attr("preserveAspectRatio","none")
-          .attr("xlink:href",function(d) {
-            return d.image_path
-          });  
+
+   var tooltip = d3.select("body")
+    .append("div")
+   .style("position", "absolute")
+    .style("z-index", "14")
+    .style("visibility", "hidden")
+    .style("color", "white")
+    .style("padding", "8px")
+    .style("background-color", "rgba(0, 0, 0, 0.75)")
+    .style("border-radius", "6px")
+    .style("font", "12px sans-serif")
+    .text("tooltip");  
 
 
     // Add a circle for every datapoint
    var circles= svg.selectAll(".artist")
-      .data(datapoints)
-      .enter().append("circle")
-      .attr("class","artist-pattern")
+    .data(datapoints)
+    
+     .enter().append("circle")
+      .attr('fill', function(d) {
+        return "url(#" +d.team+ ")"
+        })
+      
+      .attr("class","artist")
+
+  
+
+      
+    .on("mouseover", function(d) {
+     tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
+    //tooltip.text(d.id + ":  "  +d.wins  );
+    tooltip.style("left", (d3.mouse(this)[0]+330) + "px")
+      tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
+
+      
+       
+       tooltip.style("visibility", "visible");
+      
+})
       .attr('r', function(d) {
         return radiusScale(d.wins)
       })
-
+     
 
      //this fill is supposed to work but turns the images black (if the name doesn't match) or white (name matches)
-      .attr('fill', function(d) {
-      return "url(#" +d.team+ ")"
-      })
-    
+     
+
       .on("click", function(d) {
         console.log(d)
       });
      
      
+   //tooltip area not working
+
    var titles = svg.selectAll("circle")
-      .append('title')
-      .text( function(d) {
-        return d.id
-      });
-
-    
+   .append('title')
+   .text( function(d) {
+     return d.id + ': ' + d.wins
+   });
 
 
     
+ 
      //We'll use this later
     // Hey simulation, here are our datapoints!
 
@@ -100,14 +122,14 @@ var defs = svg.append("defs");
       // some of you go left, some of you go right
       simulation.force("x", splitForce)
       // Now restart the simulation
-      simulation.alphaTarget(0.4).restart()
-    })
+      simulation.alphaTarget(0.25).restart()
+    }) 
 
     d3.select("#no-conferences").on('click', function() {
       // Go back to the middle EVERYONE
       simulation.force("x", d3.forceX(width /2))
       // Now restart the simulation
-      simulation.alphaTarget(0.4).restart()
+      simulation.alphaTarget(0.25).restart()
     })
   
     // We'll use this later

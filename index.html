@@ -11,7 +11,11 @@
   font-weight: normal;
 }
 
-
+.title {
+  font-family: 'Spectral', sans-serif;
+  font-weight: normal;
+  font-size: 2rem;
+} 
 h1 {
   margin-bottom: 10px;
   margin-top: 15px;
@@ -73,27 +77,25 @@ h4 {
   stroke-width: 2px;
 }
 
-.tooltip {
-  background: #D4D4D4;
-  border: 0;
-  border-radius: 4px;
-  font-family: 'Spectral', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  height: auto;
-  letter-spacing: -1px;
-  padding: 3px;
-  pointer-events: none;
-  position: absolute;
-}
+.tooltip {                                                        /* NEW */
+        background: #eee;                                               /* NEW */
+        box-shadow: 0 0 5px #999999;                                    /* NEW */
+        color: #333;                                                    /* NEW */
+        display: none;                                                  /* NEW */
+        font-size: 12px;                                                /* NEW */
+        left: 130px;                                                    /* NEW */
+        padding: 10px;                                                  /* NEW */
+        position: absolute;                                             /* NEW */
+        text-align: center;                                             /* NEW */
+        top: 95px;                                                      /* NEW */
+        width: 80px;                                                    /* NEW */
+        z-index: 10;                                                    /* NEW */
+      }                                                                 /* NEW */
 
-.tooltipCircle {
-  text-align: center;
-  width: 250px;
-}
 
     </style>
   </head>
+  <title></title>
 </head>
 <body>
   <div class="container">
@@ -205,6 +207,6 @@ h4 {
   <script src="superbowl.js"></script>
  <!-- <script src="02-network.js"></script>>-->
 
- Source: Pro Football Reference
+ <a href="https://www.pro-football-reference.com/super-bowl">Source: Pro Football Reference </a> 
 </body>
 </html>
