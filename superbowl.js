@@ -69,30 +69,32 @@ var defs = svg.append("pattern");
       .attr('r', function(d) {
         return radiusScale(d.wins)
       })
-      
+     
 
   
 
 
-    .on("mouseover", function(d) {
+   // .on("mouseover", function(d) {
       
-     tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
+    // tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
    
-    tooltip.style("left", (d3.mouse(this)[0]+600) + "px")
-      tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
-       tooltip.style("visibility", "visible")
-       tooltip.transition()
+  //  tooltip.style("left", (d3.mouse(this)[0]+600) + "px")
+  //    tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
+   //    tooltip.style("visibility", "visible")
+   ////    tooltip.transition()
   
       
-})
+//})
 
-   .on("mouseleave", function(d) {
-      tooltip.transition()
-      tooltip.duration(200)
-      tooltip.style("opacity", 0)
-      tooltip.style("visibility", "hidden")
+  // .on("mouseout", function(d) {
+   //   tooltip.transition()
+   ///   tooltip.duration(200)
+    //  tooltip.style("opacity", 0)
+   //   tooltip.style("visibility", "hidden")
 
-    })
+     
+
+ //   })
 
 
     
@@ -109,8 +111,9 @@ var defs = svg.append("pattern");
   var titles = svg.selectAll("circle")
    .append('title')
    .html( function(d) {
-     return d.id + ': ' + d.wins
-  });
+    return d.id+": " +d.wins+" &#013;&#010;" + d.years
+});
+ 
 
 
              
