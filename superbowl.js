@@ -78,7 +78,7 @@ var defs = svg.append("pattern");
       
      tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
    
-    tooltip.style("left", (d3.mouse(this)[0]+450) + "px")
+    tooltip.style("left", (d3.mouse(this)[0]+30) + "px")
       tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
        tooltip.style("visibility", "visible")
        tooltip.transition()
