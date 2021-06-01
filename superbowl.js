@@ -66,41 +66,51 @@ var defs = svg.append("pattern");
         })
       
       .attr("class","artist")
-
-  
-
-      
-    .on("mouseover", function(d) {
-     tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
-    //tooltip.text(d.id + ":  "  +d.wins  );
-    tooltip.style("left", (d3.mouse(this)[0]+330) + "px")
-      tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
-
-      
-       
-       tooltip.style("visibility", "visible");
-      
-})
       .attr('r', function(d) {
         return radiusScale(d.wins)
       })
+      
+
+  
+
+
+    .on("mouseover", function(d) {
+      
+     tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
+   
+    tooltip.style("left", (d3.mouse(this)[0]+450) + "px")
+      tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
+       tooltip.style("visibility", "visible")
+       tooltip.transition()
+  
+      
+})
+
+   .on("mouseleave", function(d) {
+      tooltip.transition()
+      tooltip.duration(200)
+      tooltip.style("opacity", 0)
+      tooltip.style("visibility", "hidden")
+
+    })
+
+
+    
      
 
      //this fill is supposed to work but turns the images black (if the name doesn't match) or white (name matches)
      
 
-      .on("click", function(d) {
-        console.log(d)
-      });
      
      
-   //tooltip area not working
+     
+  //this is using standard title tag. commented out for now.
 
-   var titles = svg.selectAll("circle")
-   .append('title')
-   .text( function(d) {
-     return d.id + ': ' + d.wins
-   });
+  // var titles = svg.selectAll("circle")
+  // .append('title')
+  // .text( function(d) {
+  //   return d.id + ': ' + d.wins
+ //  });
 
 
     

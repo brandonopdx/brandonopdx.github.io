@@ -1,21 +1,21 @@
 id,team,wins,conference,image_path,years
 Pittsburgh Steelers,steelers,6,AFC,images/steelers.png,"1975,1976,1979,1980,2006,2009"
 New England Patriots,patriots,6,AFC,images/patriots.png,"2002,2004,2005,2015,2017,2019"
-San Francisco 49ers,49ers,5,NFC,images/49ers.png,
-Dallas Cowboys,cowboys,5,NFC,images/cowboys.png,
-Green Bay Packers,packers,4,NFC,images/packers.png,
-New York Giants,giants,4,NFC,images/giants.png,
-Las Vegas Raiders,raiders,3,AFC,images/raiders.png,
-Washington Football Team,redskins,3,NFC,images/redskins.png,
-Denver Broncos,broncos,3,AFC,images/broncos.png,
-Baltimore Ravens,ravens,2,AFC,images/ravens.png,
-Tampa Bay Buccaneers,buccaneers,2,NFC,images/buccaneers.png,
-Indianapolis Colts,colts,2,AFC,images/colts.png,
-Kansas City Chiefs,chiefs,2,AFC,images/chiefs.png,
-Miami Dolphins,dolphins,2,AFC,images/dolphins.png,
-New Orleans Saints,saints,1,NFC,images/saints.png,
-New York Jets,jets,1,AFC,images/jets.png,
-Chicago Bears,bears,1,NFC,images/bears.png,
-Philadelphia Eagles,eagles,1,NFC,images/eagles.png,
+San Francisco 49ers,49ers,5,NFC,images/49ers.png,"1982,1985,1989,1990,1995"
+Dallas Cowboys,cowboys,5,NFC,images/cowboys.png,"1972,1978,1993,1994,1996"
+Green Bay Packers,packers,4,NFC,images/packers.png,"1967,1968,1997,2011"
+New York Giants,giants,4,NFC,images/giants.png,"1987,1991,2008,2012"
+Las Vegas Raiders,raiders,3,AFC,images/raiders.png,"1977,1981,1984"
+Washington Football Team,redskins,3,NFC,images/redskins.png,"1983,1988,1992"
+Denver Broncos,broncos,3,AFC,images/broncos.png,"1998,1999,2016"
+Baltimore Ravens,ravens,2,AFC,images/ravens.png,"2001,2013"
+Tampa Bay Buccaneers,buccaneers,2,NFC,images/buccaneers.png,"2003,2021"
+Indianapolis Colts,colts,2,AFC,images/colts.png,"1971,2007"
+Kansas City Chiefs,chiefs,2,AFC,images/chiefs.png,"1970,2020"
+Miami Dolphins,dolphins,2,AFC,images/dolphins.png,"1973,1974"
+New Orleans Saints,saints,1,NFC,images/saints.png,2010
+New York Jets,jets,1,AFC,images/jets.png,1969
+Chicago Bears,bears,1,NFC,images/bears.png,1986
+Philadelphia Eagles,eagles,1,NFC,images/eagles.png,2018
 Seattle Seahawks,seahawks,1,NFC,images/seahawks.png,2014
 Los Angeles Rams,rams,1,NFC,images/rams.png,2000
