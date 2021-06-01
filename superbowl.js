@@ -78,8 +78,8 @@ var defs = svg.append("pattern");
       
      tooltip.html(d.id+": " +d.wins+ "<br>"+ d.years)
    
-    tooltip.style("left", (d3.mouse(this)[0]+300) + "px")
-      tooltip.style("top", (d3.mouse(this)[1]+0) + "px")
+    tooltip.style("left", (d3.mouse(this)[0]+600) + "px")
+      tooltip.style("top", (d3.mouse(this)[1]+30) + "px")
        tooltip.style("visibility", "visible")
        tooltip.transition()
   
@@ -106,14 +106,14 @@ var defs = svg.append("pattern");
      
   //this is using standard title tag. commented out for now.
 
-  // var titles = svg.selectAll("circle")
-  // .append('title')
-  // .text( function(d) {
-  //   return d.id + ': ' + d.wins
- //  });
+  var titles = svg.selectAll("circle")
+   .append('title')
+   .html( function(d) {
+     return d.id + ': ' + d.wins
+  });
 
 
-    
+             
  
      //We'll use this later
     // Hey simulation, here are our datapoints!
