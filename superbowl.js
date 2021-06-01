@@ -73,7 +73,12 @@ var defs = svg.append("defs");
       });
      
      
-   
+   var titles = svg.selectAll("circle")
+      .append('title')
+      .text( function(d) {
+        return d.id
+      });
+
     
 
 
