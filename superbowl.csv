@@ -18,4 +18,4 @@ New York Jets,jets,1,AFC,images/jets.png,1969
 Chicago Bears,bears,1,NFC,images/bears.png,1986
 Philadelphia Eagles,eagles,1,NFC,images/eagles.png,2018
 Seattle Seahawks,seahawks,1,NFC,images/seahawks.png,2014
-Los Angeles Rams,rams,1,NFC,images/rams.png,2000
+Los Angeles Rams,rams,2,NFC,images/rams.png,"2000,2022"
